@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#211719">
+  <meta name="description" content="Explore traditional and signature drinks from 23 countries around the world.">
+  <title>World Wide Bar | A Journey Through the World of Drinks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="header-kicker">AN ATLAS OF DRINKING CULTURES</div>
+      <h1 class="site-title">World Wide <span>Bar</span></h1>
+      <p class="site-subtitle">A JOURNEY THROUGH THE WORLD OF DRINKS</p>
+      <div class="header-ornament" aria-hidden="true"><span></span><i>✦</i><span></span></div>
+    </header>
+
+    <main class="main-content">
+      <section class="map-section" aria-labelledby="map-heading">
+        <div class="section-topline">
+          <div>
+            <p class="section-eyebrow">EXPLORE THE COLLECTION</p>
+            <h2 id="map-heading">A World of Flavours</h2>
+          </div>
+          <div class="collection-count"><strong>23</strong><span>COUNTRIES<br>TO DISCOVER</span></div>
+        </div>
+        <div class="map-frame">
+          <div id="world-map" class="world-map" role="img" aria-label="세계 전통주를 소개하는 인터랙티브 세계지도">
+            <div class="map-loading"><span class="loading-mark">✦</span><span>Preparing the world map…</span></div>
+          </div>
+          <div class="map-compass" aria-hidden="true"><span>N</span><i>✧</i></div>
+        </div>
+        <div class="map-caption">
+          <span class="caption-dot"></span>
+          <span>SELECT A GOLDEN MARKER TO OPEN THE COUNTRY'S SIGNATURE DRINK</span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>WORLD WIDE BAR</span>
+      <span>TRADITION · CRAFT · CULTURE</span>
+    </footer>
+  </div>
+
+  <aside id="drink-info" class="info-panel" aria-label="국가별 술 팜플렛" aria-hidden="true">
+    <div class="panel-frame">
+      <div class="pamphlet-top">
+        <span class="pamphlet-brand">WORLD WIDE BAR</span>
+        <button class="pamphlet-close" id="close-pamphlet" type="button" aria-label="팜플렛 닫기">×</button>
+      </div>
+      <div class="pamphlet-content" id="pamphlet-content" aria-live="polite"></div>
+      <div class="pamphlet-bottom">
+        <span class="page-counter" id="page-counter">01 / 03</span>
+        <div class="page-buttons">
+          <button id="prev-page" type="button" aria-label="이전 페이지" disabled>‹</button>
+          <button id="next-page" type="button" aria-label="다음 페이지">›</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div id="map-tooltip" class="map-tooltip" role="status" aria-hidden="true"></div>
+
+  <!-- 외부 지도 라이브러리 -->
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+  <!-- 지역별 데이터 파일을 먼저 불러온 뒤 main.js 실행 -->
+  <script src="js/data/oceania.js"></script>
+  <script src="js/data/asia.js"></script>
+  <script src="js/data/europe.js"></script>
+  <script src="js/data/africa.js"></script>
+  <script src="js/data/americas.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
